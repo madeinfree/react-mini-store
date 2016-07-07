@@ -1,0 +1,51 @@
+{
+  "name": "react-mini-store",
+  "version": "1.0.0",
+  "description": "for",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib dist es",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:commonjs",
+    "prepublish": "npm run clean && npm run build",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack"
+  },
+  "files": [
+    "lib",
+    "es",
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeinfree/react-mini-store.git"
+  },
+  "keywords": [
+    "react",
+    "store"
+  ],
+  "author": "Whien_Liou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madeinfree/react-mini-store/issues"
+  },
+  "homepage": "https://github.com/madeinfree/react-mini-store#readme",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.6.5",
+    "babel-eslint": "^5.0.0-beta4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
+    "babel-plugin-transform-es3-property-literals": "^6.5.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "cross-env": "^1.0.7",
+    "mocha": "^2.2.5",
+    "redux": "^3.4.0",
+    "rimraf": "^2.5.3",
+    "webpack": "^1.12.14"
+  }
+}
